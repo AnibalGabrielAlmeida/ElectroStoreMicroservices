@@ -35,12 +35,13 @@ public class ShoppingCartService implements IShoppingCartService {
     }
 
     @Override
-    public void updateShoppingCart(Long id, ShoppingCart shoppingCart) {
+    public ShoppingCart updateShoppingCart(Long id, ShoppingCart shoppingCart) {
         ShoppingCart existingCart = shoppingCartRepository.findById(id).orElse(null);
         if (existingCart != null && shoppingCart != null){
             existingCart.setTotalPrice(shoppingCart.getTotalPrice());
             existingCart.setProductIds(shoppingCart.getProductIds());
             createShoppingCart(existingCart);
         }
+        return existingCart;
     }
 }

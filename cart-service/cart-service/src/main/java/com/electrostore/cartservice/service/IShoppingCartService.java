@@ -12,5 +12,5 @@ public interface IShoppingCartService {
     public List<ShoppingCart> getShoppingCarts();
     public ShoppingCart findShoppingCartById(Long id);
     public void deleteShoppingCart(Long id);
-    public void updateShoppingCart(Long id, ShoppingCart shoppingCart);
+    public ShoppingCart updateShoppingCart(Long id, ShoppingCart shoppingCart);
 }
