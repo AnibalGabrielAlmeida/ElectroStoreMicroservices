@@ -1,0 +1,12 @@
+server:
+  port: 9001
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDBDialect
+  datasource:
+    url: jdbc:mariadb://localhost:3306/product_service?serverTimezone=UTC
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
