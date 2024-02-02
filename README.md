@@ -8,9 +8,9 @@ ElectroStoreMicroservices is an ongoing project aimed at establishing the backen
 - **Pattern Implementations:**
   - **API Gateway:** Centralized management and routing of API requests for enhanced performance and security.
   - **Circuit Breaker:** Ensuring system stability by preventing the propagation of faults through automatic failover.
-  - **Service Discovery:** Facilitating dynamic service registration and discovery for efficient communication between microservices.
+  - **Service Registry & Discovery:** Facilitating dynamic service registration and discovery for efficient communication between microservices.
+  - **Load Balancing:** Load balancing optimizes the distribution of incoming network traffic across multiple servers, preventing overload and ensuring optimal resource utilization. 
+  - **Config Server:** A Config Server centralizes the management of configuration settings for individual microservices. 
 
 ## Future Development
-As the project evolves, I'm planing to incorporate additional design patterns to enhance the scalability, reliability, and overall efficiency of ElectroStoreMicroservices.
-
-
+As the project evolves, one of the key focus areas is the integration of containerization using Docker for deployment. Docker containers will enable seamless packaging and deployment of individual microservices, enhancing portability, scalability, and ease of management in diverse environments.
