@@ -23,7 +23,7 @@ public class ShoppingCartController {
     public ResponseEntity<Void> createShoppingCart(@RequestBody ShoppingCart shoppingCart) {
         shoppingCartService.createShoppingCart(shoppingCart);
 
-        UriComponents uriComponents = UriComponentsBuilder.fromPath("/cart/{id}").buildAndExpand(product.getId());
+        UriComponents uriComponents = UriComponentsBuilder.fromPath("/cart/{id}").buildAndExpand(shoppingCart.getId());
         URI location = uriComponents.toUri();
         return ResponseEntity.created(location).build();
     }
