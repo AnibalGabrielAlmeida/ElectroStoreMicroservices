@@ -7,7 +7,9 @@ spring:
 
 logging:
   level:
-    org.springframework.cloud.config: DEBUG
+    root: DEBUG  # Establece el nivel de detalle general
+    org.springframework.cloud.config: DEBUG  # Establece el nivel de detalle específico para el paquete relacionado con la configuración
+
 
 
 cloud:
