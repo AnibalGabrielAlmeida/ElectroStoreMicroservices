@@ -5,6 +5,10 @@ spring:
   application:
     name: config-server
 
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+
 
 cloud:
   config:
