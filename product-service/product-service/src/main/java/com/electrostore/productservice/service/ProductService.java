@@ -3,10 +3,12 @@ package com.electrostore.productservice.service;
 import com.electrostore.productservice.model.Product;
 import com.electrostore.productservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class ProductService implements IProductService {
     @Autowired
     ProductRepository productRepository;

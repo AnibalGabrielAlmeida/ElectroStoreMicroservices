@@ -1,7 +1,7 @@
 package com.electrostore.productservice.controller;
 
 import com.electrostore.productservice.model.Product;
-import com.electrostore.productservice.service.ProductService;
+import com.electrostore.productservice.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    private IProductService productService;
 
     @PostMapping("/create")
     public ResponseEntity<Void> createProduct(@RequestBody Product product) {
