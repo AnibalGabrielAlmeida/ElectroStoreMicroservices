@@ -18,8 +18,11 @@ public class ShoppingCart {
     private Long id;
 
     @ElementCollection
-    private List<Long> productIds;
+    private List<Long> listProductIds;
 
     private double totalPrice;
 
+
+    public void updateTotalPrice() {
+    }
 }

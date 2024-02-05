@@ -1,10 +1,14 @@
 package com.electrostore.salesservice.service;
 
+import com.electrostore.salesservice.dto.CartDto;
 import com.electrostore.salesservice.model.Sale;
 import com.electrostore.salesservice.repository.SaleRepository;
+
+import com.electrostore.salesservice.repository.ShoppingCartServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -13,10 +17,26 @@ public class SaleService implements ISaleService{
     @Autowired
     SaleRepository saleRepository;
 
+    @Autowired
+    private ShoppingCartServiceClient shoppingCartService;
+
     @Override
-    public void createSale(Sale sale) {
-        saleRepository.save(sale);
+    public Sale createSale(Long cartId) {
+        // Get the shopping cart
+        CartDto cartDto = shoppingCartService.getCartInfo(cartId);
+
+        // Create the sale and associate it with the shopping cart
+        Sale sale = new Sale();
+        sale.setDate(LocalDate.now());
+        sale.setShoppingCartId(cartId);
+
+        // Save the sale to the database
+        Sale savedSale = saleRepository.save(sale);
+
+
+        return savedSale;
     }
+
 
     @Override
     public List<Sale> getSales() {
@@ -39,7 +59,7 @@ public class SaleService implements ISaleService{
         if(existingSale != null && sale != null){
             existingSale.setDate(sale.getDate());
             existingSale.setShoppingCartId(sale.getShoppingCartId());
-            createSale(existingSale);
+            saleRepository.save(existingSale);
         }
         return existingSale;
     }

@@ -37,11 +37,16 @@ public class ProductService implements IProductService {
     public Product updateProduct(Long id, Product product) {
         Product existingProduct = productRepository.findById(id).orElse(null);
         if(existingProduct != null && product != null){
-            existingProduct.setNombre(product.getNombre());
-            existingProduct.setMarca(product.getMarca());
-            existingProduct.setPrecio(product.getPrecio());
+            existingProduct.setName(product.getName());
+            existingProduct.setBrand(product.getBrand());
+            existingProduct.setPrice(product.getPrice());
             productRepository.save(existingProduct);
         }
         return existingProduct;
+    }
+
+    @Override
+    public List<Product> getProductsByIds(List<Long> productIds) {
+        return productRepository.findAllById(productIds);
     }
 }

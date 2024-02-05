@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
@@ -30,6 +30,12 @@ public class ProductController {
     @GetMapping("/list")
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = productService.getProduct();
+        return ResponseEntity.ok(products);
+    }
+
+    @GetMapping("/list-by-ids")
+    public ResponseEntity<List<Product>> getProductsByIds(@RequestParam List<Long> productIds) {
+        List<Product> products = productService.getProductsByIds(productIds);
         return ResponseEntity.ok(products);
     }
 

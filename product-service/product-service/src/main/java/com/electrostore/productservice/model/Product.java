@@ -17,9 +17,9 @@ public class Product {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     /*add a UUID code*/
-    private String nombre;
-    private String marca;
-    private Double precio;
+    private String name;
+    private String brand;
+    private Double price;
 
 
 }
