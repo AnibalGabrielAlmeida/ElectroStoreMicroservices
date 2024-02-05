@@ -5,7 +5,6 @@ import com.electrostore.cartservice.dto.ProductRequest;
 import com.electrostore.cartservice.model.ShoppingCart;
 import com.electrostore.cartservice.repository.ProductServiceClient;
 import com.electrostore.cartservice.service.IShoppingCartService;
-import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -76,16 +75,17 @@ public class ShoppingCartController {
 
     @PostMapping("/{cartId}/add-product")
     public ResponseEntity<Void> addProductToCart(@PathVariable Long cartId, @RequestBody ProductRequest request) {
-        // Obtener información del producto desde el servicio de productos utilizando Feign
+        // Obtain product information from the product service using Feign
         ProductDto productDto = productServiceClient.getProductInfo(request.getProductId());
 
-        // Actualizar la cantidad en el producto DTO
+        // Update the quantity in the product DTO
         productDto.setQuantity(request.getQuantity());
 
-        // Pasar DTO para agregar el producto al carrito
+        // Pass DTO to add the product to the shopping cart
         shoppingCartService.addProductToCart(cartId, productDto);
 
         return ResponseEntity.ok().build();
     }
+
 
 }

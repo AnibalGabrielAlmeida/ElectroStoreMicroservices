@@ -2,7 +2,6 @@ package com.electrostore.cartservice.service;
 
 
 import com.electrostore.cartservice.dto.ProductDto;
-import com.electrostore.cartservice.dto.ProductRequest;
 import com.electrostore.cartservice.model.ShoppingCart;
 import org.springframework.stereotype.Service;
 
