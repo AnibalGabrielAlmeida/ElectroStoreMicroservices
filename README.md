@@ -14,3 +14,5 @@ ElectroStoreMicroservices is an ongoing project aimed at establishing the backen
 
 ## Future Development
 As the project evolves, one of the key focus areas is the integration of containerization using Docker for deployment. Docker containers will enable seamless packaging and deployment of individual microservices, enhancing portability, scalability, and ease of management in diverse environments.
+Also I'm considering a frontend implementation.
+
