@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/sale")
+@RequestMapping("/sales")
 public class SaleContoller {
     @Autowired
     ISaleService saleService;
